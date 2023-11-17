@@ -1,0 +1,35 @@
+<%- include('partials/header.ejs')%>
+  
+    <form action="/publish" method="POST">
+        <%if (locals.post) {%>
+          <input type="hidden" id="postId" name="postId" value="<%= post.id%>" />
+          <div class="mb-3">
+            <label for="subject" class="form-label">Título</label>
+            <input type="text" class="form-control" id="subject" name="subject" value="<%= post.subject%>" aria-describedby="subjectHelp" required>
+          </div>
+          <div class="mb-3">
+            <label for="post" class="form-label">Artigo</label>
+            <textarea class="form-control" id="post" rows="12" name="post" required><%= post.post%></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="url" class="form-label">URL</label>
+            <input type="text" class="form-control" id="url" name="url" value="<%= post.url%>" aria-describedby="urlHelp" required>
+          </div>
+        <%} else {%>
+          <div class="mb-3">
+            <label for="subject" class="form-label">subject</label>
+            <input type="text" class="form-control" id="subject" name="subject" aria-describedby="subjectHelp" required>
+          </div>
+          <div class="mb-3">
+            <label for="post" class="form-label">Post</label>
+            <textarea class="form-control" id="post" rows="12" name="post" required></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="url" class="form-label">URL</label>
+            <input type="text" class="form-control" id="url" name="url" aria-describedby="urlHelp" required>
+          </div>          
+        <%}%>
+        <button type="submit" class="btn btn-primary">Publicar</button>
+      </form>    
+  
+<%- include('partials/footer.ejs')%>

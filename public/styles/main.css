@@ -1,0 +1,15 @@
+body {
+    font-family: 'Roboto Mono', monospace;
+}
+
+.header-background {
+    background-color: #ADC4CE;
+}
+
+.main-background {
+    background-color: #EEE0C9;
+}
+
+.footer-background {
+    background-color: #F1F0E8;
+}
